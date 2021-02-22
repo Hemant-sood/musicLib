@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Artist = require('../model/Artist');
 const Song = require('../model/Song');
+const Album = require('../model/Album');
 const jwt = require('jsonwebtoken');
 
 
@@ -57,9 +58,7 @@ router.post('/upload', async(request, response) => {
     }
 
 
-    let album;
-    if (request.body.album)
-        album = request.body.album;
+    let album = request.body.album;
 
     let song = {
         'name': name,
@@ -70,8 +69,23 @@ router.post('/upload', async(request, response) => {
     };
 
     song = new Song(song);
-
     await song.save();
+
+    // To add this song in Album
+    album = await Album.findOne({
+        name: request.body.album,
+        artist: artist,
+    });
+
+    if (!album) {
+        album = {
+            'name': request.body.album,
+            'artist': artist,
+        };
+        album = new Album(album)
+        await album.save();
+    }
+    await Album.updateOne({ '_id': album._id }, { $push: { songs: song._id } });
 
     response.send("Song uploaded successfully");
 
