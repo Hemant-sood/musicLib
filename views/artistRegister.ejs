@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="/css/styles.css">
+  
+
+    <title>Login</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <div class="img"></div>  
+<div class="container ">
+  <div class="row">
+      <div class="col-sm-4">
+       </div>
+       <div class="col-sm-4 bg-text">
+        <div id="form-div" class="">
+          <form id="artistRegisterForm">
+              <p class="display-4">Artist Regristration</p>
+              <div class="mb-3 ">
+                  <label for="exampleName " class="form-label ">Artist Name</label>
+                  <input type="text " class="form-control " id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Nsm" required>
+                  <div id="nameError" class="font-weight-bold text-danger"></div>
+              </div>
+              <div class="mb-3 ">
+                <label for="exampleNumber " class="form-label ">Number</label>
+                <input type="number " class="form-control " id="mobile" name="mobile" aria-describedby="emailHelp" required>
+                <div id="numberError" class="font-weight-bold text-danger"></div>
+            </div>
+            <div class="mb-3 ">
+              <label for="exampleInputEmail1 " class="form-label ">Email</label>
+              <input type="email " class="form-control " id="email" name="email" aria-describedby="emailHelp" required>
+              <div id="emailError" class="font-weight-bold text-danger"></div>
+          </div>
+              <div class="mb-3 ">
+                  <label for="exampleInputPassword1 " class="form-label ">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" required>
+                  <div id="passwordError" class="font-weight-bold text-danger"></div>
+              </div>
+              <div class="mb-3 ">
+                <label for="exampleInputPassword2 " class="form-label "> Confirm Password</label>
+                <input type="password" class="form-control" id=" confirmpassword" name="confirmpassword" required>
+                <div id="confirmpasswordError" class="font-weight-bold text-danger"></div>
+            </div>
+                 
+                     <button class="btn btn-primary ">Login</button>
+                  
+             </form>
+             <script>
+              let form=document.getElementById("artistRegisterForm");
+                form.addEventListener("submit",async(event)=>{
+                  event.preventDefault();
+                 var name=form.name.value;
+                 var email=form.email.value;
+                 var password=form.password.value;
+                 var mobile=form.mobile.value;
+                 var cpassword=form.confirmpassword.value;
+            
+                 if((password!=cpassword))
+                 {
+                   document.getElementById("confirmpasswordError").innerText="not match";
+                   return;
+                 }
+                 console.log(name+email+password+mobile);
+                });
+              
+              
+            </script>
+
+          <div><br/> Don't have Account? Go to <a href="/register">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+      </div>
+  </div>
+</div>
+</div>
+
+</body>
+</html>

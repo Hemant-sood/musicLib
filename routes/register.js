@@ -17,7 +17,7 @@ router.get('/', async(request, response) => {
 //get route for ARTIST - register
 router.get('/artist', async(request, response) => {
 
-    response.send('Register page for Artist');
+    response.render('../views/artistRegister.ejs');
 
 });
 

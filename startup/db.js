@@ -5,7 +5,7 @@ dotenv.config();
 module.exports = async function() {
 
     try {
-        await mongoose.connect(process.env.Mongo_Uri, { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect(process.env.Mongo_Uri, { useNewUrlParser: true, useUnifiedTopology: true,  useCreateIndex:true });
         console.log('Mongodb connection success');
 
     } catch (er) {
