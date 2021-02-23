@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
-
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -17,7 +16,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
-
 });
 
 userSchema.methods.generateAuthToken = function() {

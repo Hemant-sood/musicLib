@@ -4,9 +4,11 @@ const Artist = require('../model/Artist');
 const Song = require('../model/Song');
 const Album = require('../model/Album');
 const jwt = require('jsonwebtoken');
+const authUser = require('../middleware/auth').authUser;
+const getCurrentArtist = require('../middleware/auth').getCurrentArtist;
 
 
-router.get('/:id', async(request, response) => {
+router.get('/:id', authUser, async(request, response) => {
 
     let song;
     try {
@@ -28,7 +30,7 @@ router.get('/:id', async(request, response) => {
 
 
 //This route is only accessible for Artist
-router.post('/upload', async(request, response) => {
+router.post('/upload', authUser, async(request, response) => {
 
     const name = request.body.name;
 
@@ -42,21 +44,9 @@ router.post('/upload', async(request, response) => {
     if (request.body.genre)
         genre = request.body.genre;
 
-    let artist;
-    try {
-        const token = request.cookies.token;
-        const decode = jwt.verify(token, process.env.jwtKey);
-        artist = await Artist.findById(decode);
-        if (!artist)
-            return response.status(404).send("Artist not found");
-
-        artist = artist._id;
-
-    } catch (ex) {
-        console.log(ex);
-        return;
-    }
-
+    let artist = await getCurrentArtist(request);
+    if (!artist)
+        return response.status(404).send("Artist not found");
 
     let album = request.body.album;
 
