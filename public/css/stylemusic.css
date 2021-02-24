@@ -1,0 +1,124 @@
+body,html
+{
+    height: 100%;
+}
+*
+{
+  box-sizing: border-box;
+}
+.img{
+    /* The image used */
+    background-image: url("https://www.teahub.io/photos/full/81-819560_rock-music-wallpaper-hd-cool-guitar-backgrounds-fire.jpg");
+  
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+.footer
+{  position: absolute;
+  top:682px;
+  width: 100%;
+  height: 40px;
+  bottom: 0px;
+  text-align: center;
+  background-image: linear-gradient(to right top, #6c0207, #7d0108, #8f0007, #a10004, #b30000);
+  color: white;
+}
+
+#tag
+{
+    background-image: linear-gradient(to right top, #6c0207, #7d0108, #8f0007, #a10004, #b30000);
+    color: white;
+}
+
+#Weather
+{
+color: white;
+}
+#aboutus
+{
+color: white;
+}
+
+#home
+{
+  color: white;
+}
+
+#img
+{
+    width:100%;
+    height: 300px;
+    filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+#head
+{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: grey;
+    position: absolute;
+    top: 170px;
+    left: 0px;
+    font-size: 64px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.aboutimg
+{  width: 100%;
+  height: 100%;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+#about-para
+{position: absolute;
+  top:350px;
+  left: 100px;
+  width: 1000px;
+  color: white;
+  font-size: 30px;
+  font-family: "Lucida Console", "Courier New", monospace;
+ font-weight: bold;
+
+}
+#about-para,p
+{ 
+  text-align:justify;
+}
+#image
+{
+  height:300px;
+  width: 300px;
+  position: absolute;
+  left: 300px;
+  top:5%;
+  border-radius:300px;
+  -webkit-box-shadow: 0 0 5px 2px rgb(153, 141, 141);
+    -moz-box-shadow: 0 0 5px 2px rgb(153, 141, 141);
+    box-shadow: 0 0 5px 2px rgb(153, 141, 141);
+}

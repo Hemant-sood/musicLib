@@ -23,11 +23,11 @@
        </div>
        <div class="col-sm-4 bg-text">
         <div id="form-div" class="">
-          <form id="artistRegisterForm">
+          <form id="artistRegisterForm" action="/artist" method="POST">
               <p class="display-4">Artist Regristration</p>
               <div class="mb-3 ">
                   <label for="exampleName " class="form-label ">Artist Name</label>
-                  <input type="text " class="form-control " id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Nsm" required>
+                  <input type="text" class="form-control " id="name" name="name" aria-describedby="emailHelp" placeholder="Enter Nsm" required>
                   <div id="nameError" class="font-weight-bold text-danger"></div>
               </div>
               <div class="mb-3 ">
@@ -51,7 +51,7 @@
                 <div id="confirmpasswordError" class="font-weight-bold text-danger"></div>
             </div>
                  
-                     <button class="btn btn-primary ">Login</button>
+                     <button type="submit" class="btn btn-primary ">Register</button>
                   
              </form>
              <script>

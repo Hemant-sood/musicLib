@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt');
 //get route for USER - register
 router.get('/', async(request, response) => {
 
-    response.send('Register page for User');
+    response.render('../views/userRegister.ejs');
 
 });
 
