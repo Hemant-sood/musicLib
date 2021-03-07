@@ -1,5 +1,6 @@
 body {
     background-image: url("https://wallpapercave.com/wp/wp2326983.jpg");
+    background-size: cover;
 }
 
 .whiteColor {
@@ -87,4 +88,13 @@ footer {
 
 .verticalSpanIcon {
     vertical-align: bottom;
+}
+
+.cardView {
+    color: wheat;
+}
+
+.cardView:hover {
+    border-radius: 10%;
+    box-shadow: 8px 8px 8px 8px gray;
 }

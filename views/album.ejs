@@ -2,8 +2,34 @@
 
 
     <p class="fs-1 text-secondary center">Your Albums</p>
-
     <br/>
+
+
+
+    <div class="modal fade" id="RenameAlbum" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Rename Album</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="playlist" class="col-form-label">Album New Name:</label>
+                            <input type="text" class="form-control" id="newName" placeholder="Enter here" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="renameThisAlbum()">Rename</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="container">
         <div class="row">
             <div class="col-sm-8 center">
@@ -13,6 +39,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Album Name</th>
+                            <th scope="col">Album Rename</th>
 
                         </tr>
                     </thead>
@@ -29,6 +56,15 @@
                                         <%= data.album[i].name %>
                                     </a>
                                 </td>
+                                <td>
+
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" onclick="renameAlbum('<%= data.album[i]._id %>')">
+                                         <span style="vertical-align: bottom;" class="material-icons">
+                                            drive_file_rename_outline
+                                        </span> Rename
+                                    </button>
+                                </td>
+
                             </tr>
                             <% } %>
 
@@ -45,10 +81,23 @@
 
 
     <script>
-        async function createPlaylist() {
+        var albumId;
+        var albumNewName
+        async function renameAlbum(id) {
+            $('#RenameAlbum').modal('show');
+            albumId = id;
+        }
+
+
+
+
+        async function renameThisAlbum() {
+            var albumNewName = document.getElementById("newName").value;
+            $('#RenameAlbum').modal('hide');
 
             var data = {
-                name,
+                albumId,
+                albumNewName,
             }
 
             options = {
@@ -62,7 +111,7 @@
 
             let res = '';
             try {
-                res = await fetch('/playlist/createNewPlaylist', options);
+                res = await fetch('/album/renameAlbum', options);
                 res = await res.json();
                 resultMessage.innerHTML = res.msg;
                 console.log(res);
@@ -70,6 +119,12 @@
                 console.log(ex);
                 resultMessage.innerHTML = ex;
             }
+
+            playlistId = null;
+
+            setTimeout(function() {
+                location.assign('/album');
+            }, 1000);
 
         }
     </script>
