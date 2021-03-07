@@ -1,0 +1,90 @@
+body {
+    background-image: url("https://wallpapercave.com/wp/wp2326983.jpg");
+}
+
+.whiteColor {
+    color: white
+}
+
+.noUnderline {
+    text-decoration: none;
+}
+
+.noUnderline:hover {
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    background-color: #292b2c;
+}
+
+.dropdownClass {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left {
+    text-align: left;
+    margin-left: 0%;
+}
+
+.fix {
+    position: fixed;
+    padding: 20px 20px 20px 20px;
+    bottom: 0;
+    /* Height of the footer*/
+    height: 80px;
+    width: 100%;
+    z-index: 2;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid black;
+    border-bottom: 16px solid black;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.verticalSpanIcon {
+    vertical-align: bottom;
+}

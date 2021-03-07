@@ -1,0 +1,49 @@
+<%- include('./partial/header.ejs'); %>
+
+    <p class="fs-1 text-secondary center">
+        <i class="text-primary">
+        <%= data.album.name %> </i> Album </p>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 center">
+
+                <table class="table whiteColor">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Song Name</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <% for(var i = 0; i<data.album.songs.length; i++)  {%>
+
+                            <tr>
+                                <th scope="row">
+                                    <%= i+1 %>
+                                </th>
+                                <td>
+                                    <button style=" background:none;border:none;color:#007bff;" class="link fs-4" onclick="fetchSong('<%= data.album.songs[i]._id %>')">
+                                        <%= data.album.songs[i].name %>
+                                    </button>
+                                </td>
+                            </tr>
+                            <% } %>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <%- include('./partial/footer.ejs'); %>

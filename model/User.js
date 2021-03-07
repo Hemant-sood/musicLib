@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
 const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
@@ -16,6 +15,14 @@ const userSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    imageUri: {
+        type: String,
+        default: ''
+    },
+    isArtist: {
+        type: Boolean,
+        default: false
+    }
 });
 
 userSchema.methods.generateAuthToken = function() {
