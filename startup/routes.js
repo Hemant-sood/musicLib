@@ -4,7 +4,7 @@ const express = require('express');
 const register = require('../routes/register');
 const login = require('../routes/login');
 const song = require('../routes/song');
-
+const playlist = require('../routes/playlist');
 
 module.exports = function(app) {
 
@@ -19,6 +19,6 @@ module.exports = function(app) {
     app.use('/register', register);
     app.use('/login', login);
     app.use('/song', song);
-
+    app.use('/playlist', playlist);
 
 }
