@@ -1,4 +1,4 @@
-<audio class="fix " id='audio' controls="controls " type="audio/mpeg ">
+<audio class="fix" id='audio' controls="controls " type="audio/mpeg ">
 </audio>
 
 <script>
@@ -9,7 +9,7 @@
         var options = {
             method: 'GET',
         }
-        var res = await fetch(`/song/${id}`, options);
+        var res = await fetch(`/song/${id}`,options);
         res = await res.json();
 
         audio.src = res.songFile;

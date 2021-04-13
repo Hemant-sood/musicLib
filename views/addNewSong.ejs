@@ -67,12 +67,11 @@
         img.addEventListener('change', async function(event) {
             event.preventDefault();
             var file = event.target.files[0];
-
             formData = await toBase64(file);
 
         });
 
-        const toBase64 = file => new Promise((resolve, reject) => {
+            const toBase64 = file => new Promise((resolve, reject) => {
             const reader = new FileReader();
             reader.readAsDataURL(file);
             reader.onload = () => resolve(reader.result);

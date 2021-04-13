@@ -29,8 +29,7 @@
         </div>
     </div>
 
-
-    <div class="container">
+/<!--    <div class="container">
         <div class="row">
             <div class="col-sm-8 center">
 
@@ -57,7 +56,6 @@
                                     </a>
                                 </td>
                                 <td>
-
                                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" onclick="renameAlbum('<%= data.album[i]._id %>')">
                                          <span style="vertical-align: bottom;" class="material-icons">
                                             drive_file_rename_outline
@@ -77,9 +75,29 @@
     </div>
 
     <br/><br/><br/>
+-->
 
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 center " style=" margin-left:5%" >
+            <% for(var i = 0; i<data.album.length; i++)  {   %>
+                <div  class="card-body albumcardView" style="margin-left:4% ">
+                    <a href='album/<%= data.album[i]._id%>' class="noUnderline fs-4">
+                    <%= data.album[i].name %>
+                </a>
+                <p class="card-body artist ">
+                    
+                </p>
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" onclick="renameAlbum('<%= data.album[i]._id %>')">
+                    <span style="vertical-align: bottom;" class="material-icons">
+                       drive_file_rename_outline
+                   </span> Rename
+               </button>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
     <script>
         var albumId;
         var albumNewName
