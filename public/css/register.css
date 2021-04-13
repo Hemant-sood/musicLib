@@ -11,7 +11,11 @@ html {
 
 .bg-image {
     /* The image used */
+<<<<<<< HEAD
     background-image: url("https://wallpapercave.com/wp/wp2326983.jpg");
+=======
+    background-image: url("https: //wallpapercave.com/wp/wp2326983.jpg");
+>>>>>>> 0c5936a472996475f032b02ad63d5519285fe251
     /* Add the blur effect */
     filter: blur(0px);
     -webkit-filter: blur(0px);

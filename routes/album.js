@@ -45,5 +45,32 @@ router.get('/:id', auth, async(request, response) => {
 });
 
 
+// To Rename a specific Album
+router.post('/renameAlbum', auth, async(request, response) => {
+
+    let user = await getCurrentUser(request.cookies);
+    if (!user || !user.isArtist) {
+
+        return response.status(401).send("Artist not found");
+    }
+
+    const albumId = request.body.albumId;
+    const albumNewName = request.body.albumNewName;
+
+    let resAlbum = await Album.findById(albumId);
+
+    if (!resAlbum)
+        return response.send({
+            msg: "Album does not exist"
+        });
+
+    resAlbum.name = albumNewName;
+    await resAlbum.save();
+
+
+    response.send({ msg: "Album Rename successfully" });
+
+});
+
 
 module.exports = router;

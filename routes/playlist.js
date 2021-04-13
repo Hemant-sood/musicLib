@@ -14,7 +14,7 @@ router.get('/', auth, async(request, response) => {
 
     let user = await getCurrentUser(request.cookies);
     if (!user) {
-        return response.status(404).send("User not found");
+        return response.status(401).send("User not found");
     }
 
     try {
@@ -111,8 +111,6 @@ router.post('/renamePlaylist', auth, async(request, response) => {
     response.send({ msg: "Playlist Rename successfully" });
 
 });
-
-
 
 
 
