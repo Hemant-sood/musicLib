@@ -14,7 +14,7 @@ router.get('/upload', auth, async(request, response) => {
 
 });
 
-
+// song /: id
 router.get('/:id', auth, async(request, response) => {
 
     let song;
